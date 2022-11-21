@@ -17,10 +17,10 @@ function App() {
 
   return (
     <>
-  <Escena text={HeroStory[0].text} />;
-  <Escena text={HeroStory[1].text} />;
-  <Escena text={HeroStory[2].text} />;
-  <Escena text={HeroStory[3].text} />;
+  <Escena text={HeroStory[0].text} />
+  <Escena text={HeroStory[1].text} />
+  <Escena text={HeroStory[2].text} />
+  <Escena text={HeroStory[3].text} />
   </>
   )
 }
