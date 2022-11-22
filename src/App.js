@@ -5,6 +5,7 @@ function App() {
   const HeroStory = [
     {
       text: "El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial",
+      
     },
     {
       text: "Sentia curiositat per l'interior de la nau i es va posar a inspeccionar-la. Va arribar a una sala amb dues portes.",
@@ -17,10 +18,8 @@ function App() {
 
   return (
     <>
-  <Escena text={HeroStory[0].text} />
-  <Escena text={HeroStory[1].text} />
-  <Escena text={HeroStory[2].text} />
-  <Escena text={HeroStory[3].text} />
+  <Escena items={HeroStory}  />
+  
   </>
   )
 }
