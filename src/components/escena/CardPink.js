@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Card = styled.div`
+export const CardPink = styled.div`
 border: 1px solid black;
 background-color:pink;
 padding: 0.5rem 1.5rem;

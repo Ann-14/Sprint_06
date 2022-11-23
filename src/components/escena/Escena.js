@@ -1,15 +1,20 @@
 
 
-import { Card } from "./StyledEscena"
+import './Escena.css'
+
+export const Escena = ({counter,items}) => {
 
 
-export const Escena = ({text}) => {
-  
+
+const storyText = items.map((elem,index) =>(
+  <div key={index} className={`${index === counter ? "pinkStyle": "normalStyle" }`}>
+     {elem.text}
+  </div>
+  ))
+
 return (
   <>
-  <Card>
-  <h3> {text}</h3>
-  </Card>
+{storyText}
   </>
 )
 
