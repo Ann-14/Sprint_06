@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import { Button } from "./components/Button";
 import { Escena } from "./components/escena/Escena";
+import { Welcome } from "./components/escena/Welcome";
 
 function App() {
   const heroStory = [
@@ -34,7 +35,30 @@ function App() {
      counter >= 4 ? setCounter(1) : setCounter(counter + 1)
   }
 
+  const [welcomeMessage, setwelcomeMessage] = useState(true)
 
+  const changeWelcomeState = (dataFromChild) =>{
+    setwelcomeMessage(dataFromChild)
+  }
+  
+ 
+
+  if(welcomeMessage === true){
+    
+    
+
+
+return (
+  <>
+  <Welcome handleStart={changeWelcomeState}></Welcome>
+  </>
+)
+
+
+  }
+
+
+else {
   return (
     <>
       <Button textBtn={'Anterior'} handleClick={moveBack} />
@@ -46,6 +70,7 @@ function App() {
     </>
 
   )
+}
 }
 
 export default App;
