@@ -2,13 +2,13 @@
 
 import './Escena.css'
 
-export const Escena = ({counter,items}) => {
+export const Escena = ({counter,heroStory}) => {
 
-
-
-const storyText = items.map((elem,index) =>(
-  <div key={index} className={`${index === counter ? "pinkStyle": "normalStyle" }`}>
+const storyText = heroStory.map((elem,index ) =>(
+  
+  <div  key={index} className={`${(elem.id)  === counter ? "pinkStyle": "normalStyle" }`}>
      {elem.text}
+    
   </div>
   ))
 
