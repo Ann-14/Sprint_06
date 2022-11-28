@@ -1,12 +1,12 @@
 
-
+import {HeroStory} from "../data/HeroStory"
 import './Escena.css'
 
-export const Escena = ({counter,heroStory}) => {
+export const Escena = (props) => {
 
-const storyText = heroStory.map((elem,index ) =>(
+const storyText = HeroStory.map((elem,index ) =>(
   
-  <div  key={index} className={`${(elem.id)  === counter ? "pinkStyle": "normalStyle" }`}>
+  <div key={index} className={`${(elem.id)  === props.counter ? "pinkStyle": "normalStyle" }`}>
      {elem.text}
     
   </div>
@@ -14,7 +14,11 @@ const storyText = heroStory.map((elem,index ) =>(
 
 return (
   <>
-{storyText}
+
+ <div>{storyText}</div>
+ <img src={HeroStory[props.counter].img} alt='random' ></img>
+ 
+
   </>
 )
 
