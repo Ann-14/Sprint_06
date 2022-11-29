@@ -1,12 +1,13 @@
 .pinkStyle {
   border: 1px solid black;
-
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
   margin: 1rem;
   font-size: 10px;
   background-color: rgb(255, 159, 159);
   color: black;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .normalStyle {
@@ -15,5 +16,5 @@
   padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
   margin: 1rem;
-  font-size: 10px;
+  font-size: 1rem;
 }
