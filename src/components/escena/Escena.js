@@ -1,7 +1,19 @@
+import { HeroStory } from "../data/HeroStory";
+import "./Escena.css";
 
+export const Escena = (props) => {
+  const storyText = HeroStory.map((elem, index) => (
+    <div
+      key={index}
+      className={`${elem.id === props.counter ? "pinkStyle" : "normalStyle"}`}
+    >
+      {elem.text}
+    </div>
+  ));
 
-export const Escena = () => {
   return (
-    <div>"El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial"</div>
-  )
-}
+    <>
+      <div>{storyText}</div>
+    </>
+  );
+};

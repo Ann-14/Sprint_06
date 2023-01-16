@@ -1,28 +1,45 @@
+import { useState } from "react";
 import "./App.css";
+import { Button } from "./components/Button";
+import { HeroStory } from "./components/data/HeroStory";
 import { Escena } from "./components/escena/Escena";
+import { Welcome } from "./components/escena/Welcome";
+import { BackgroundImg } from "./components/escena/StyledEscena";
 
 function App() {
-  const HeroStory = [
-    {
-      text: "El nostre heroi estava surant per l'espai sideral quan a la llunyania va albirar una nau espacial",
-    },
-    {
-      text: "Sentia curiositat per l'interior de la nau i es va posar a inspeccionar-la. Va arribar a una sala amb dues portes.",
-    },
-    { text: "L'heroi va decidir travessar la porta que el portava a casa" },
-    {
-      text: "Mentrestant, altres herois no van tenir tanta sort en la seva elecció ...",
-    },
-  ];
+  const [counter, setCounter] = useState(0);
 
-  return (
-    <>
-  <Escena text={HeroStory[0].text} />;
-  <Escena text={HeroStory[1].text} />;
-  <Escena text={HeroStory[2].text} />;
-  <Escena text={HeroStory[3].text} />;
-  </>
-  )
+  const moveBack = () => {
+    counter <= 0 ? setCounter(3) : setCounter(counter - 1);
+  };
+
+  const moveNext = () => {
+    counter >= 3 ? setCounter(0) : setCounter(counter + 1);
+  };
+
+  const [welcomeMessage, setwelcomeMessage] = useState(true);
+
+  const changeWelcomeState = (dataFromChild) => {
+    setwelcomeMessage(dataFromChild);
+  };
+
+  if (welcomeMessage === true) {
+    return (
+      <>
+        <Welcome handleStart={changeWelcomeState}></Welcome>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <BackgroundImg background={HeroStory[counter].img}>
+          <Button textBtn={"Anterior"} handleClick={moveBack} />
+          <Button textBtn={"Següent"} handleClick={moveNext} />
+          {<Escena counter={counter} />}
+        </BackgroundImg>
+      </>
+    );
+  }
 }
 
 export default App;
